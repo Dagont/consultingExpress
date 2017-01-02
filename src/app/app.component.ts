@@ -29,8 +29,6 @@ export class MyApp {
       { title: 'Subir Proyecto', component: subirProyecto },
       { title: 'Proyectos Activos', component: proyectosActivos },
       { title: 'Mis subastas', component: consultarSubastas },
-      { title: 'login', component: login },
-      { title: 'presentacion', component: presentacion }
     ];
 
   }
