@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Subir Proyecto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- Seleccionar area -->
+  <ion-item>
+    <div class="list">
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Area:
+      </div>
+      <select>
+        <option selected>Matematicas</option>
+        <option>Fisica</option>
+        <option>Programación</option>
+      </select>
+    </label>
+    </div>
+  </ion-item>
+
+  <!-- Descripcion -->
+  <ion-item>
+   <ion-label stacked>Descripcion</ion-label>
+   <ion-textarea [(ngModel)]="msg"></ion-textarea>
+ </ion-item>
+
+  <!-- Fecha -->
+  <ion-item>
+  <ion-label>Fecha de entrega limite</ion-label>
+  <ion-datetime displayFormat="DD/MM/YYYY" min="2016" max="2020-10-31" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+
+    <!-- Cargar archivo  --> 
+  <div>
+  <button ion-button item-right icon-left (click)="cargarArchivo()">
+  <ion-icon name="attach"></ion-icon>
+    Adjuntar archivo
+  </button>
+
+  <ion-card *ngIf="cargado === true"><ion-card-content>
+    archivoPrueba.pdf
+  </ion-card-content></ion-card>
+  </div>
+
+  <!-- Enviar proyecto -->
+  <button ion-button full *ngIf="enviado === false" (click)="enviarProyecto()">
+      Enviar proyecto
+  </button>
+
+  <!-- Ver el proyecto -->
+  <button ion-button full *ngIf="enviado === true" (click)="verProyecto()">
+    Ver proyecto enviado
+  </button>
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Login</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+        <img class="medium-image" src="http://wwwfalafel.falafeldev.com/images/default-source/additional-store-images/consulting-express.png?sfvrsn=2" />
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="contra"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div>
+        <button ion-button block (click)="verificarLogin()">Sign In</button>
+    </div>
+</ion-content>
