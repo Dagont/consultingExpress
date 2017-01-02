@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Proyectos activos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Categoria</ion-label>
+      <ion-select (ionChange)="cambiarCategoria()" [(ngModel)]="categoria" name="categoria">
+        <ion-option value="matematicas" selected="true">Matematicas</ion-option>
+        <ion-option value="ciencias">Ciencias</ion-option>
+        <ion-option value="programacion">Programacion</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail *ngIf="item.data.thumbnail" item-left> 
+        <img src = "{{item.data.thumbnail}}">
+      </ion-thumbnail>
+      <h2>{{item.data.title}}</h2>
+      <p>
+        <ion-icon name="thumbs-up">{{item.data.score}}</ion-icon>&nbsp;&nbsp;
+        <ion-icon name="chatboxes">{{item.data.num_comments}}</ion-icon>
+      </p>  
+      <button ion-button clear item-right (click)="verProyecto(item.data)">Ver</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
